@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,31 +18,37 @@ scroll-behavior:smooth;
 }
 
 body{
-background:#f5f7fa;
-color:#222;
+background:#f8fafc;
+color:#1e293b;
 }
+
+/* NAVBAR */
 
 nav{
 position:fixed;
-width:100%;
 top:0;
+width:100%;
 background:white;
 padding:18px;
-text-align:center;
-box-shadow:0 2px 10px rgba(0,0,0,0.08);
+display:flex;
+justify-content:center;
+gap:30px;
+box-shadow:0 2px 15px rgba(0,0,0,0.05);
 z-index:1000;
 }
 
 nav a{
-color:#222;
-margin:0 18px;
 text-decoration:none;
+color:#1e293b;
 font-weight:500;
+transition:0.3s;
 }
 
 nav a:hover{
-color:#0077b6;
+color:#2563eb;
 }
+
+/* SECTIONS */
 
 section{
 min-height:100vh;
@@ -50,54 +56,92 @@ display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-padding:80px 20px;
+padding:100px 20px;
 text-align:center;
 }
 
-#home{
-background:white;
+/* HERO */
+
+.hero{
+display:flex;
+flex-direction:column;
+align-items:center;
 }
 
-#home h1{
-font-size:46px;
+.hero h1{
+font-size:48px;
 }
 
-#home p{
+.hero p{
 margin-top:15px;
 font-size:20px;
-color:#555;
+color:#475569;
 }
 
+.btn{
+margin-top:25px;
+padding:12px 25px;
+background:#2563eb;
+color:white;
+border:none;
+border-radius:30px;
+cursor:pointer;
+text-decoration:none;
+transition:0.3s;
+}
+
+.btn:hover{
+background:#1d4ed8;
+}
+
+/* CARD */
+
 .card{
-max-width:850px;
-margin-top:30px;
 background:white;
-padding:35px;
-border-radius:10px;
-box-shadow:0 5px 20px rgba(0,0,0,0.08);
+padding:40px;
+border-radius:15px;
+box-shadow:0 8px 25px rgba(0,0,0,0.05);
+max-width:900px;
+margin-top:30px;
 text-align:left;
 }
 
-.card h2{
-margin-bottom:15px;
-color:#0077b6;
+/* SKILLS */
+
+.skills{
+display:flex;
+flex-wrap:wrap;
+gap:12px;
 }
 
 .skills span{
-display:inline-block;
-background:#e3f2fd;
-color:#0077b6;
+background:#e0e7ff;
+color:#1d4ed8;
 padding:10px 18px;
-margin:8px;
 border-radius:25px;
 font-size:14px;
 }
+
+/* ANIMATION */
+
+.hidden{
+opacity:0;
+transform:translateY(40px);
+transition:all 0.8s ease;
+}
+
+.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* FOOTER */
 
 footer{
 padding:25px;
 text-align:center;
 background:white;
-border-top:1px solid #ddd;
+border-top:1px solid #e2e8f0;
 }
 
 </style>
@@ -114,34 +158,37 @@ border-top:1px solid #ddd;
 </nav>
 
 <section id="home">
+<div class="hero">
 <h1>AKSHAY KALURAM DARE</h1>
 <p>Production & Operations Professional | Manufacturing Leadership</p>
+<a href="#contact" class="btn">Contact Me</a>
+</div>
 </section>
 
-<section id="about">
+<section id="about" class="hidden">
 <div class="card">
 <h2>About Me</h2>
 <p>
-Manufacturing & Operations Professional with 3+ years of experience across FMCG, Electronics and Automobile industries. Skilled in production planning, manpower management, process optimization and shopfloor supervision. Focused on operational efficiency and structured manufacturing systems.
+Manufacturing & Operations Professional with 3+ years of experience across FMCG, Electronics and Automobile industries. Skilled in production planning, manpower management, process optimization and structured shopfloor leadership.
 </p>
 </div>
 </section>
 
-<section id="experience">
+<section id="experience" class="hidden">
 <div class="card">
-<h2>Professional Experience</h2>
+<h2>Experience</h2>
 <p><strong>Production Manager – Urban Platter</strong></p>
-<p>Leading production planning, manpower allocation and operational efficiency improvement initiatives.</p>
+<p>Leading production planning, manpower allocation and operational efficiency initiatives.</p>
 <br>
-<p><strong>Floor Supervisor – Selec Controls Pvt. Ltd.</strong></p>
-<p>Managed 120+ workforce in high-volume electronics manufacturing environment.</p>
+<p><strong>Floor Supervisor – Selec Controls</strong></p>
+<p>Managed 120+ workforce in high-volume electronics manufacturing.</p>
 <br>
 <p><strong>PDI Technician – Wasan Motors</strong></p>
-<p>Handled vehicle inspection, diagnostics and quality verification.</p>
+<p>Handled diagnostics and quality inspection.</p>
 </div>
 </section>
 
-<section id="skills">
+<section id="skills" class="hidden">
 <div class="card">
 <h2>Core Skills</h2>
 <div class="skills">
@@ -155,7 +202,7 @@ Manufacturing & Operations Professional with 3+ years of experience across FMCG,
 </div>
 </section>
 
-<section id="contact">
+<section id="contact" class="hidden">
 <div class="card">
 <h2>Contact</h2>
 <p>Email: akshdare1010@gmail.com</p>
@@ -165,8 +212,26 @@ Manufacturing & Operations Professional with 3+ years of experience across FMCG,
 </section>
 
 <footer>
-© 2026 Akshay Kaluram Dare | Manufacturing & Operations Portfolio
+© 2026 Akshay Kaluram Dare | Executive Portfolio
 </footer>
+
+<script>
+
+/* Scroll Animation */
+
+const hiddenElements = document.querySelectorAll('.hidden');
+
+const observer = new IntersectionObserver((entries)=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add('show');
+}
+});
+});
+
+hiddenElements.forEach(el => observer.observe(el));
+
+</script>
 
 </body>
 </html>
