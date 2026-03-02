@@ -1,73 +1,89 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Akshay Kaluram Dare</title>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Akshay Kaluram Dare</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
 <style>
 
-body {
-    margin:0;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color:#f4f6f9;
-    color:#333;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins', sans-serif;
+scroll-behavior:smooth;
 }
 
-.header {
-    background:#111;
-    color:white;
-    padding:80px 20px;
-    text-align:center;
+body{
+background:#0f172a;
+color:white;
 }
 
-.header h1 {
-    margin:0;
-    font-size:40px;
-    letter-spacing:2px;
+nav{
+position:fixed;
+width:100%;
+top:0;
+background:#0f172a;
+padding:20px;
+text-align:center;
+z-index:1000;
 }
 
-.header p {
-    margin-top:10px;
-    font-size:18px;
-    color:#ccc;
+nav a{
+color:white;
+margin:0 20px;
+text-decoration:none;
+font-weight:500;
 }
 
-.section {
-    padding:60px 20px;
-    text-align:center;
+section{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+padding:40px;
+text-align:center;
 }
 
-.card {
-    background:white;
-    max-width:900px;
-    margin:20px auto;
-    padding:30px;
-    border-radius:8px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.08);
-    text-align:left;
+#home{
+background:linear-gradient(135deg,#0f172a,#1e293b);
 }
 
-.card h2 {
-    margin-top:0;
-    border-bottom:2px solid #111;
-    padding-bottom:10px;
+#home h1{
+font-size:50px;
 }
 
-.skills span {
-    display:inline-block;
-    background:#111;
-    color:white;
-    padding:8px 15px;
-    margin:5px;
-    border-radius:20px;
-    font-size:14px;
+#home p{
+margin-top:20px;
+font-size:20px;
+color:#94a3b8;
 }
 
-.footer {
-    background:#111;
-    color:white;
-    text-align:center;
-    padding:20px;
-    margin-top:40px;
+.card{
+max-width:800px;
+margin-top:30px;
+background:#1e293b;
+padding:30px;
+border-radius:12px;
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+.skills span{
+display:inline-block;
+background:#334155;
+padding:10px 18px;
+margin:8px;
+border-radius:30px;
+}
+
+footer{
+padding:30px;
+text-align:center;
+background:#020617;
 }
 
 </style>
@@ -75,62 +91,63 @@ body {
 
 <body>
 
-<div class="header">
-    <h1>AKSHAY KALURAM DARE</h1>
-    <p>Production & Operations Professional | Manufacturing Leadership</p>
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#experience">Experience</a>
+<a href="#skills">Skills</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<section id="home">
+<h1>AKSHAY KALURAM DARE</h1>
+<p>Production & Operations Professional | Manufacturing Leadership</p>
+</section>
+
+<section id="about">
+<h2>About Me</h2>
+<div class="card">
+<p>
+Manufacturing & Operations Professional with 3+ years of experience across FMCG, Electronics and Automobile industries. Experienced in production planning, manpower handling, process optimization and shopfloor supervision.
+</p>
 </div>
+</section>
 
-<div class="section">
-
-    <div class="card">
-        <h2>About Me</h2>
-        <p>
-        Manufacturing and Operations Professional with 3+ years of experience across FMCG, Electronics and Automobile industries. 
-        Experienced in production planning, manpower handling, process optimization and shopfloor supervision. 
-        Strong technical exposure to industrial systems and continuous improvement practices.
-        </p>
-    </div>
-
-    <div class="card">
-        <h2>Professional Experience</h2>
-        <p><strong>Production Manager – Urban Platter</strong></p>
-        <p>Leading production planning, manpower allocation and operational efficiency improvement initiatives.</p>
-
-        <br>
-
-        <p><strong>Floor Supervisor – Selec Controls Pvt. Ltd.</strong></p>
-        <p>Managed 120+ workforce in high-volume production environment and implemented structured work systems.</p>
-
-        <br>
-
-        <p><strong>PDI Technician – Wasan Motors</strong></p>
-        <p>Handled vehicle diagnostics, inspection and quality verification.</p>
-    </div>
-
-    <div class="card">
-        <h2>Core Skills</h2>
-        <div class="skills">
-            <span>Production Planning</span>
-            <span>Manpower Management</span>
-            <span>Lean 5S</span>
-            <span>Process Optimization</span>
-            <span>Industrial Automation Basics</span>
-            <span>Shopfloor Operations</span>
-        </div>
-    </div>
-
-    <div class="card">
-        <h2>Contact</h2>
-        <p>Email: akshdare1010@gmail.com</p>
-        <p>Phone: 7715895484</p>
-        <p>Location: Thane, Maharashtra, India</p>
-    </div>
-
+<section id="experience">
+<h2>Experience</h2>
+<div class="card">
+<p><strong>Production Manager – Urban Platter</strong></p>
+<p>Leading production planning, manpower allocation and operational efficiency improvement.</p>
+<br>
+<p><strong>Floor Supervisor – Selec Controls</strong></p>
+<p>Managed 120+ workforce in high-volume production environment.</p>
 </div>
+</section>
 
-<div class="footer">
-    © 2026 Akshay Kaluram Dare | Manufacturing & Operations Portfolio
+<section id="skills">
+<h2>Core Skills</h2>
+<div class="card skills">
+<span>Production Planning</span>
+<span>Manpower Management</span>
+<span>Lean 5S</span>
+<span>Process Optimization</span>
+<span>Industrial Automation</span>
+<span>Shopfloor Leadership</span>
 </div>
+</section>
+
+<section id="contact">
+<h2>Contact</h2>
+<div class="card">
+<p>Email: akshdare1010@gmail.com</p>
+<p>Phone: 7715895484</p>
+<p>Location: Thane, Maharashtra</p>
+</div>
+</section>
+
+<footer>
+© 2026 Akshay Kaluram Dare
+</footer>
 
 </body>
 </html>
