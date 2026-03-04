@@ -1,166 +1,158 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Akshay Dare | Production Manager</title>
+<title>Akshay Dare</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 
-/* RESET */
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
+font-family:'Inter', sans-serif;
 scroll-behavior:smooth;
 }
 
 body{
-font-family:'Inter', sans-serif;
-background:#f4f6f8;
-color:#1e293b;
-line-height:1.6;
+background:#ffffff;
+color:#111827;
+overflow-x:hidden;
 }
 
 /* NAVBAR */
 
 nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
 position:fixed;
 width:100%;
-top:0;
-background:white;
-display:flex;
-justify-content:center;
-gap:40px;
-padding:18px;
-box-shadow:0 4px 20px rgba(0,0,0,0.05);
+backdrop-filter:blur(10px);
+background:rgba(255,255,255,0.8);
 z-index:1000;
 }
 
+nav h2{
+font-weight:700;
+}
+
 nav a{
+margin-left:30px;
 text-decoration:none;
-color:#1e293b;
+color:#111827;
 font-weight:500;
 transition:0.3s;
 }
 
 nav a:hover{
-color:#0f172a;
+color:#2563eb;
 }
 
-/* HERO SECTION */
+/* HERO */
 
 .hero{
-min-height:100vh;
 display:flex;
-flex-direction:column;
-justify-content:center;
+justify-content:space-between;
 align-items:center;
-text-align:center;
-padding:20px;
-background:white;
+padding:140px 8%;
+min-height:100vh;
 }
 
-.hero img{
-width:170px;
-height:170px;
-border-radius:50%;
-object-fit:cover;
-margin-bottom:30px;
-box-shadow:0 15px 40px rgba(0,0,0,0.1);
+.hero-left{
+max-width:600px;
 }
 
-.hero h1{
-font-family:'Playfair Display', serif;
-font-size:52px;
-letter-spacing:1px;
-margin-bottom:10px;
+.hero-left h1{
+font-size:56px;
+font-weight:700;
+margin-bottom:15px;
 }
 
-.hero h2{
-font-size:20px;
+.hero-left h2{
 font-weight:400;
-color:#64748b;
+color:#2563eb;
+margin-bottom:20px;
+height:30px;
+}
+
+.hero-left p{
+color:#4b5563;
+margin-bottom:35px;
 }
 
 .btn{
-margin-top:30px;
-padding:12px 28px;
-border:1px solid #1e293b;
-background:transparent;
-cursor:pointer;
-transition:0.3s;
+padding:14px 32px;
+background:linear-gradient(90deg,#3b82f6,#6366f1);
+color:white;
+border:none;
+border-radius:8px;
 text-decoration:none;
-color:#1e293b;
+font-weight:500;
+transition:0.4s;
 }
 
 .btn:hover{
-background:#1e293b;
-color:white;
+transform:translateY(-3px);
+box-shadow:0 10px 25px rgba(59,130,246,0.4);
+}
+
+/* IMAGE ANIMATION */
+
+.hero-right img{
+width:380px;
+border-radius:20px;
+box-shadow:0 25px 60px rgba(0,0,0,0.12);
+animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0px);}
+50%{transform:translateY(-15px);}
+100%{transform:translateY(0px);}
 }
 
 /* SECTIONS */
 
 section{
-padding:120px 20px;
-max-width:900px;
-margin:auto;
-text-align:center;
+padding:100px 8%;
 }
 
-h3{
-font-family:'Playfair Display', serif;
-font-size:36px;
-margin-bottom:25px;
+.section-title{
+font-size:40px;
+font-weight:700;
+margin-bottom:40px;
 }
 
 .card{
-background:white;
-padding:40px;
-border-radius:15px;
-box-shadow:0 10px 30px rgba(0,0,0,0.05);
-}
-
-/* SKILLS */
-
-.skills{
-display:flex;
-flex-wrap:wrap;
-gap:15px;
-justify-content:center;
-margin-top:20px;
-}
-
-.skills span{
-background:#e2e8f0;
-padding:10px 20px;
-border-radius:25px;
-font-size:14px;
-}
-
-/* ANIMATION */
-
-.hidden{
+background:#f9fafb;
+padding:35px;
+border-radius:16px;
+margin-bottom:20px;
 opacity:0;
 transform:translateY(40px);
 transition:all 0.8s ease;
 }
 
-.show{
+.card.show{
 opacity:1;
 transform:translateY(0);
 }
 
-/* FOOTER */
+/* MOBILE */
 
-footer{
+@media(max-width:900px){
+.hero{
+flex-direction:column-reverse;
 text-align:center;
-padding:40px;
-background:white;
-margin-top:60px;
-color:#64748b;
+}
+.hero-right img{
+width:260px;
+margin-bottom:40px;
+}
 }
 
 </style>
@@ -169,90 +161,82 @@ color:#64748b;
 <body>
 
 <nav>
+<h2>Akshay Dare</h2>
+<div>
 <a href="#about">About</a>
 <a href="#experience">Experience</a>
-<a href="#skills">Skills</a>
 <a href="#contact">Contact</a>
+</div>
 </nav>
 
 <div class="hero">
-<img src="akshay.jpg" alt="Akshay Dare">
-<h1>Akshay Kaluram Dare</h1>
-<h2>Production Manager | Manufacturing & Automation Specialist</h2>
-<a href="#about" class="btn">View Profile</a>
-</div>
-
-<section id="about" class="hidden">
-<h3>About Me</h3>
-<div class="card">
+<div class="hero-left">
+<h1>Akshay Dare</h1>
+<h2 id="typing"></h2>
 <p>
-Operations-driven Production Manager with 3+ years of experience across FMCG, Electronics Manufacturing and Automobile industries. Skilled in production planning, manpower leadership, process optimization and shopfloor execution. Strong technical foundation combined with structured operational strategy.
+Operations-driven professional with experience in FMCG, Electronics and Automobile Manufacturing environments.
 </p>
+<a href="#contact" class="btn">Contact Me</a>
 </div>
-</section>
 
-<section id="experience" class="hidden">
-<h3>Professional Experience</h3>
+<div class="hero-right">
+<img src="akshay.jpg" alt="Akshay">
+</div>
+</div>
+
+<section id="about">
+<div class="section-title">About Me</div>
 <div class="card">
-<p><strong>Production Manager – Urban Platter</strong><br>
-Leading production planning, manpower allocation, operational efficiency and compliance management.</p>
-
-<br>
-
-<p><strong>Floor Supervisor – Selec Controls Pvt Ltd</strong><br>
-Managed 120+ workforce in electronics manufacturing environment with focus on productivity and quality control.</p>
-
-<br>
-
-<p><strong>PDI Technician – Wasan Motors</strong><br>
-Handled diagnostics, inspection and delivery quality standards.</p>
+Experienced in production planning, manpower optimization and structured shopfloor execution.
 </div>
 </section>
 
-<section id="skills" class="hidden">
-<h3>Core Competencies</h3>
+<section id="experience">
+<div class="section-title">Experience</div>
+<div class="card">Production Manager – Urban Platter</div>
+<div class="card">Floor Supervisor – Selec Controls</div>
+<div class="card">PDI Technician – Wasan Motors</div>
+</section>
+
+<section id="contact">
+<div class="section-title">Contact</div>
 <div class="card">
-<div class="skills">
-<span>Production Planning</span>
-<span>Manpower Management</span>
-<span>Lean 5S Implementation</span>
-<span>Process Optimization</span>
-<span>Industrial Automation</span>
-<span>Shopfloor Leadership</span>
-<span>Quality Control</span>
-<span>Operational Strategy</span>
-</div>
+Email: akshdare1010@gmail.com<br>
+Phone: 7715895484<br>
+Location: Thane, Maharashtra
 </div>
 </section>
-
-<section id="contact" class="hidden">
-<h3>Contact</h3>
-<div class="card">
-<p>Email: akshdare1010@gmail.com</p>
-<p>Phone: 7715895484</p>
-<p>Location: Thane, Maharashtra</p>
-</div>
-</section>
-
-<footer>
-© 2026 Akshay Kaluram Dare | Executive Manufacturing Portfolio
-</footer>
 
 <script>
 
-/* Scroll Reveal Animation */
+/* Typing Animation */
 
-const elements = document.querySelectorAll('.hidden');
+const text = "Production Manager | Manufacturing Leadership";
+let i = 0;
+function typing(){
+if(i < text.length){
+document.getElementById("typing").innerHTML += text.charAt(i);
+i++;
+setTimeout(typing, 50);
+}
+}
+typing();
+
+/* Scroll Reveal */
+
+const cards = document.querySelectorAll(".card");
 
 const observer = new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
 if(entry.isIntersecting){
-entry.target.classList.add('show');
+entry.target.classList.add("show");
 }
 });
 });
 
-elements.forEach(el=>observer.observe(el));
+cards.forEach(card=>{
+observer.observe(card);
+});
 
 </script>
 
